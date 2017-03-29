@@ -23,7 +23,7 @@
 function getMiddle(s) {
     //Code goes here!
     var len = Math.floor(s.length / 2);
-    return s.length % 2 == 0 ? s[len-1] + s[len] : s[len];
+    return s.length % 2 === 0 ? s[len-1] + s[len] : s[len];
 }
 
 /* clever solution */

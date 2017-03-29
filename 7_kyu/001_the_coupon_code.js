@@ -17,14 +17,14 @@
  */
 
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
-    var currentDate = Date.parse(currentDate);
+    currentDate = Date.parse(currentDate);
 
     // expires right before midnight on the day of expiration, 86399999 is 23:59:59.999
-    var expirationDate = Date.parse(expirationDate) + 86399999;
+    expirationDate = Date.parse(expirationDate) + 86399999;
     return enteredCode === correctCode && currentDate < expirationDate;
 }
 
 /* clever solution */
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
-    return enteredCode === correctCode && Date.parse(expirationDate) >= Date.parse(currentDate)
+    return enteredCode === correctCode && Date.parse(expirationDate) >= Date.parse(currentDate);
 }
