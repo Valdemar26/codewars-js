@@ -1,7 +1,7 @@
 /**
  * 001_count_by_x.js
- * http://www.codewars.com/kata/count-by-x/train/javascript
- * SOURCE CODE: https://github.com/sjaakvandenberg/codewars-javascript/blob/master/8_kyu/001_count_by_x.js
+ * http://www.codewars.com/kata/count-by-x/
+ *
  */
 
 /**
