@@ -18,6 +18,25 @@
  *          longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
  */
 
- function longest(s1, s2) {
-   // your code
- }
+function longest(s1, s2) {
+  var joined = s1.concat(s2).split('').sort();
+
+  newArray = [];
+  var sortedLength = joined.length;
+
+  for (var i = 0; i < sortedLength; i++) {
+    if (!newArray.includes(joined[i])) {
+      newArray.push(joined[i]);
+    }
+  }
+
+  return newArray.join("");
+}
+
+/* clever solution */
+const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('');
+
+/* another ES6 solution */
+function longest(s1, s2) {
+  return Array.from(new Set(s1 + s2)).sort().join('');
+}
