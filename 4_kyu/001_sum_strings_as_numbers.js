@@ -1,6 +1,8 @@
 /**
  * 001_sum_strings_as_numbers.js
  * https://www.codewars.com/kata/jaden-casing-strings/
+ * also, a lot of algorithms
+ * https://github.com/etdev/algorithms/tree/master/0_code_wars
  *
  */
 
