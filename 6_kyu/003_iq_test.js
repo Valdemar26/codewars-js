@@ -21,21 +21,24 @@
  *  iqTest("1 2 1 1") => 2 // Second number is even, while the rest of the numbers are odd
  */
 
- function iqTest(numbers) {
+function iqTest(numbers) {
+    var evenArr = [];
+    var oddArr = [];
+    numbers = numbers.split(' ').map(function(z) {
+        return parseInt(z);
+    });
+    numbers.map(function(x) {
+        return x % 2 === 0 ? evenArr.push(numbers.indexOf(x) + 1) : oddArr.push(numbers.indexOf(x) + 1) ;
+    });
+    return evenArr.length > oddArr.length ? oddArr[0] : evenArr[0];
+}
 
-   var even = numbers.split(' ').filter(function(z) {
-     return z % 2 === 0;
-   });
-   var odd = numbers.split(' ').filter(function(z) {
-     return z % 2 !== 0;
-   });
-   var num = (Math.min(even.length, odd.length))[0];
-   return (numbers.indexOf(num) + 1);
- }
+/* another solution */
+function iqTest(numbers){
+    numbers = numbers.split(" ").map(function(el){return parseInt(el)});
 
- function iqTest(numbers){
-   var even = numbers.filter(z => z % 2 === 0);
-   var odd = numbers.filter(z => z % 2 !== 0);
-   var num = (Math.min(even.length, odd.length))[0];
-   return numbers.indexOf(num) + 1;
- }
+    var odd = numbers.filter(function(el){ return el % 2 === 1});
+    var even = numbers.filter(function(el){ return el % 2 === 0});
+
+    return odd.length < even.length ? (numbers.indexOf(odd[0]) + 1) : (numbers.indexOf(even[0]) + 1);
+}

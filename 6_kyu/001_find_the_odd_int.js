@@ -1,5 +1,5 @@
 /**
- * 001_fing_the_odd_int.js
+ * 001_find_the_odd_int.js
  * https://www.codewars.com/kata/find-the-odd-int/
  *
  */
@@ -16,7 +16,23 @@
  * [5,4,3,2,1,5,4,3,2,10,10]                  =>  1
  */
 
- function findOdd(A) {
-   //happy coding!
-   return 0;
- }
+function findOdd(A) {
+    //happy coding!
+    var x = 0;
+    for(var i = 0; i < A.length; i++) {
+        x = x^A[i];
+    }
+    return x;
+}
+
+/* another solution */
+function findOdd(A) {
+    var obj = {};
+    A.forEach(function(el){
+        obj[el] ? obj[el]++ : obj[el] = 1;
+    });
+
+    for(prop in obj) {
+        if(obj[prop] % 2 !== 0) return Number(prop);
+    }
+}
