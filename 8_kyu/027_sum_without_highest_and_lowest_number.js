@@ -15,15 +15,5 @@
  */
 
 function sumArray(array) {
-    var summ = 0;
-    for(var i = 0; i < array.length; i++) {
-        var max = function( array ){
-            return Math.max.apply( Math, array );
-        };
-        var min = function(array) {
-            return Math.min.apply(Math, array);
-        };
-        summ += array[i];
-    }
-    return summ - max - min;
+
 }
