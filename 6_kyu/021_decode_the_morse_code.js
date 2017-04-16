@@ -51,5 +51,28 @@
  */
 
  decodeMorse = function(morseCode){
-   //your code here
+   var decodeString = '';
+   var morseCodeWords = morseCode.split('   '); // split by words
+   for(var i in morseCodeWords) {
+    var morseCodeArray = morseCodeWords[i].split(' '); // split by letters
+     for(var j in morseCodeArray) {
+         if(MORSE_CODE[morseCodeArray[j]] !== undefined) {
+             decodeString += MORSE_CODE[morseCodeArray[j]];
+         }
+     }
+     decodeString += ' '; // backspace between words
+   }
+   decodeString = decodeString.trim();
+   return decodeString;
  };
+
+ /* clever solution */
+ decodeMorse = function(morseCode){
+  function decodeMorseLetter(letter) {
+    return MORSE_CODE[letter];
+  }
+  function decodeMorseWord(word) {
+    return word.split(' ').map(decodeMorseLetter).join('');
+  }
+  return morseCode.trim().split('   ').map(decodeMorseWord).join(' ');
+};
