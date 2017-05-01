@@ -1,31 +1,29 @@
 /**
- * 050_string_cleaning.js
- * https://www.codewars.com/kata/string-cleaning/
+ * 022_sum_of_digits_slash_digital_root.js
+ * https://www.codewars.com/kata/string-cleaning/train/javascript
  *
  */
 
 /**
- * Your boss decided to save money by purchasing some cut-rate optical character
- * recognition software for scanning in the text of old novels to your database.
- * At first it seems to capture words okay, but you quickly notice that it throws
- * in a lot of numbers at random places in the text.
- * For example:
- *              stringClean('! !') == '! !'
- *              stringClean('123456789') == ''
- *              stringClean('This looks5 grea8t!') == 'This looks great!'
+ * In this kata, you must create a digital root function.
  *
- * Your harried co-workers are looking to you for a solution to take this garbled
- * text and remove all of the numbers. Your program will take in a string and clean
- * out all numeric characters, and return a string with spacing and special
- * characters ~#$%^&!@*():;"'.,? all intact.
+ * A digital root is the recursive sum of all the digits in a number.
+ * Given n, take the sum of the digits of n. If that value has two digits,
+ * continue reducing in this way until a single-digit number is produced.
+ * This is only applicable to the natural numbers.
+ *
+ * Here's how it works (Ruby example given):
+ *                          digital_root(16)
+ *                          => 1 + 6
+ *                          => 7
+ *
+ *                          digital_root(942)
+ *                          => 9 + 4 + 2
+ *                          => 15 ...
+ *                          => 1 + 5
+ *                          => 6
  *
  */
-
-function stringClean(s){
-return s.replace(/[0-9]/g, '');
-}
-
- /* best practices */
-function stringClean(s){
-    return s.replace(/\d/g, "");
-}
+ function stringClean(s){
+   return s.replace(/[0-9]/g, '');
+ }
