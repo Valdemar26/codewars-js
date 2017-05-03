@@ -16,3 +16,8 @@
 function repeatStr (n, s) {
     return String(Array(n+1).join(s));
 }
+
+/* best practices */
+function repeatStr (n, s) {
+    return s.repeat(n);
+}
