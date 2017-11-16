@@ -15,6 +15,14 @@
  */
 
 function order(words){
-    // ...
+    let arr = words.split(' ');
+    let compare = function(a, b) {
+        if(Number(a.match(/\d+/)[0]) < Number(a.match(/\d+/)[0])) {
+            return -1;
+        } else return 1;
+    };
+    return 0;
 
+    arr.sort(compare);
+    return arr;
 }
