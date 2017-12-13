@@ -15,14 +15,25 @@
  */
 
 function order(words){
-    let arr = words.split(' ');
-    let compare = function(a, b) {
-        if(Number(a.match(/\d+/)[0]) < Number(a.match(/\d+/)[0])) {
+    var arr = words.split(' ');
+    var compare = function(a, b) {
+        if (Number(a.match(/\d+/)[0]) < Number(b.match(/\d+/)[0])) {
             return -1;
-        } else return 1;
-    };
-    return 0;
+        }
+        if (Number(a.match(/\d+/)[0]) > Number(b.match(/\d+/)[0])) {
+            return 1;
+        }
 
+        // a must be equal to b
+        return 0;
+    }
     arr.sort(compare);
-    return arr;
+    return arr.join(' ');
+}
+
+/* best practise */
+function order(words){
+    return words.split(' ').sort(function(a, b){
+        return a.match(/\d/) - b.match(/\d/);
+    }).join(' ');
 }
